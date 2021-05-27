@@ -8,3 +8,5 @@
 [713.Subarray product less than k](https://github.com/arkito-ko/leetcode/blob/main/sliding_window/713.Subarray_Product_Less_Than_K.py)求符合条件subarray数目，这个与992相同。而条件是数字乘积不大于k，这个与992不同。求subarrat个数的问题，在找到最大的subarray (sliding window)，需要`count = right - left + 1`求以right作为尾数的满足条件的subarray个数。这道题也可以求"longest subarray with product less than k"。
 
 [340.Longest substring with at most k distinct characters](https://github.com/arkito-ko/leetcode/blob/main/sliding_window/340.Longest%20_Substring_with_At_Most_K_Distinct_Characters.py) 求符合条件的"longest subarray"，这个与992不同。但是条件是k distinct characters，这与992类似。在找到最大的subarray (sliding window)，只需要得到当前的长度`right - left + 1`而不用去加入count。类似的，这道题也可以求"substrings with at most k distinct characters"。
+
+[76.Minimum window substring](https://github.com/arkito-ko/leetcode/blob/main/sliding_window/76.Minimum_window_substring.py) 这个题是典型的sliding window，快慢双指针解法。难点在于sliding window的规则，比较target string中的字符个数，不含顺序。这个可以用一个counter来实现，记录个数已经满足的字符，注意counter改变的时候是临界点window[c] == target[c]。当然更加暴力的方法是直接比较window和target两个dict，因为是字母，最多的complexity是O(26)。
