@@ -6,7 +6,7 @@
 
 
 
-[652.Find duplicate trees](https://github.com/arkito-ko/leetcode/blob/main/tree/652.Find Duplicate Subtrees.py) 
+[652.Find duplicate trees](https://github.com/arkito-ko/leetcode/blob/main/tree/652.Find%20Duplicate%20Subtrees.py) 
 这个题开始的时候毫无头绪，主要难点在于如何高效的比较多个tree是否相同。如果是两个tree，暴力的想法是，遍历每个node做比较。可是如果是k个tree该如何做呢？解决这个问题其实就是将serialize tree，然后用serialized tree作为比较的对象。从第297题可以了解serialize binary tree的方法，分别是基于BFS的顺序记录每个node，以及基于DFS的基于preorder的记录root + left + right。但是这道题不仅仅是serialize一个tree，而是每个node为root的tree都要serialize，然后记录在dict中寻找重复tree。显然BFS并不适用，DFS的方法更加合适，每次结束一个DFS返回一个subtree的serialization，记录在dict中。
 
 
